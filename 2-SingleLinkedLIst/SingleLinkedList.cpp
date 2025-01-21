@@ -56,6 +56,36 @@ public:
         }
         length++; // Increment the length of the list
     }
+
+    Node *get_nth(int n)
+    {
+
+        if (n >= length)
+            return nullptr;
+        else
+        {
+            int i = 0;
+            for (Node *cur = head; cur; cur = cur->next)
+            {
+                if (n == ++i)
+                {
+                    return cur;
+                }
+            }
+        }
+    }
+    int search(int value)
+    {
+
+        int i = 0;
+        for (Node *cur = head; cur; cur = cur->next)
+        {
+            if (cur->data == value)
+                return i;
+            i++;
+        }
+        return -1;
+    }
 };
 
 // Main function to demonstrate the use of SingleLinkedList
@@ -74,6 +104,9 @@ int main()
     s1->insert_end(15);
     s1->print(); // Output: 5 10 15, head = 5, tail = 15, Length is : 3
 
+    cout << s1->get_nth(2) << " " << s1->get_nth(10) << endl;
+
+    cout << s1->search(5) << " " << s1->search(100) << endl;
     // Clean up memory allocated for the linked list
     delete s1;
 

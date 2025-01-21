@@ -57,43 +57,43 @@ int find(int value, Node *head)
     return -1; // Return failure if value is not found
 }
 
-int main()
-{
-    // Create a linked list: 10 -> 20 -> 30 -> 40
-    Node *head = new Node(10);
-    head->next = new Node(20);
-    head->next->next = new Node(30);
-    head->next->next->next = new Node(40);
+// int main()
+// {
+//     // Create a linked list: 10 -> 20 -> 30 -> 40
+//     Node *head = new Node(10);
+//     head->next = new Node(20);
+//     head->next->next = new Node(30);
+//     head->next->next->next = new Node(40);
 
-    cout << "Print list iteratively (print1): ";
-    print1(head); // Output: 10 20 30 40
+//     cout << "Print list iteratively (print1): ";
+//     print1(head); // Output: 10 20 30 40
 
-    cout << "Print list recursively (print2): ";
-    print2(head); // Output: 10 20 30 40
+//     cout << "Print list recursively (print2): ";
+//     print2(head); // Output: 10 20 30 40
 
-    cout << "Print list in reverse order (print3): ";
-    print3(head); // Output: 40 30 20 10
-    cout << "\n";
+//     cout << "Print list in reverse order (print3): ";
+//     print3(head); // Output: 40 30 20 10
+//     cout << "\n";
 
-    // Search for a value and delete the node
-    int valueToFind = 20;
-    int result = find(valueToFind, head);
-    if (result == 1)
-        cout << "Value " << valueToFind << " found and deleted.\n";
-    else
-        cout << "Value " << valueToFind << " not found.\n";
+//     // Search for a value and delete the node
+//     int valueToFind = 20;
+//     int result = find(valueToFind, head);
+//     if (result == 1)
+//         cout << "Value " << valueToFind << " found and deleted.\n";
+//     else
+//         cout << "Value " << valueToFind << " not found.\n";
 
-    // Print the list after deletion
-    cout << "List after deletion (print1): ";
-    print1(head); // Output: 10 30 40 (assuming node deletion worked)
+//     // Print the list after deletion
+//     cout << "List after deletion (print1): ";
+//     print1(head); // Output: 10 30 40 (assuming node deletion worked)
 
-    // Clean up memory for the remaining nodes
-    while (head != nullptr)
-    {
-        Node *temp = head;
-        head = head->next;
-        delete temp;
-    }
+//     // Clean up memory for the remaining nodes
+//     while (head != nullptr)
+//     {
+//         Node *temp = head;
+//         head = head->next;
+//         delete temp;
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
